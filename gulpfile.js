@@ -11,7 +11,21 @@ var server = require("browser-sync").create();
 var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require("del");
-var htmlmin = require("gulp-htmlmi");
+var htmlmin = require("gulp-htmlmin");
+var concat = require("gulp-concat");
+var minify = require("gulp-minify");
+
+gulp.task("js", function () {
+  return gulp.src(["src/js/*.js"])
+    .pipe(concat("index.js"))
+    .pipe(minify({
+      ext:{
+        min: ".js"
+      },
+      noSource: true
+    }))
+    .pipe(gulp.dest("docs/js/"));
+});
 
 gulp.task("css", function () {
   return gulp.src("src/scss/style.scss")
@@ -21,7 +35,7 @@ gulp.task("css", function () {
       autoprefixer()
     ]))
     .pipe(csso())
-    .pipe(gulp.dest("dist/css"))
+    .pipe(gulp.dest("docs/css"))
     .pipe(server.stream());
 });
 
@@ -31,12 +45,12 @@ gulp.task("html", function() {
       include()
     ]))
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("dist"))
+    .pipe(gulp.dest("docs"))
 });
 
 gulp.task("server", function () {
   server.init({
-    server: "dist/",
+    server: "docs/",
     notify: false,
     open: true,
     cors: true,
@@ -44,6 +58,7 @@ gulp.task("server", function () {
   });
 
   gulp.watch("src/scss/**/*.scss", gulp.series("css"));
+  gulp.watch("src/js/**/*.js", gulp.series("js", "refresh"));
   gulp.watch("src/*.html", gulp.series("html", "refresh"));
 });
 
@@ -56,5 +71,5 @@ gulp.task("clean", function() {
   return del("build");
 });
 
-gulp.task("build", gulp.series("clean", "css", "html"));
+gulp.task("build", gulp.series("clean", "css", "html", "js"));
 gulp.task("start", gulp.series("build", "server"));
