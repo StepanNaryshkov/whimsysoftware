@@ -4,6 +4,7 @@ var gulp = require("gulp");
 var plumber = require("gulp-plumber");
 var sourcemap = require("gulp-sourcemaps");
 var csso = require("gulp-csso");
+var imagemin = require("gulp-imagemin");
 var scss = require("gulp-sass");
 var postcss = require("gulp-postcss");
 var autoprefixer = require("autoprefixer");
@@ -25,6 +26,12 @@ gulp.task("js", function () {
       noSource: true
     }))
     .pipe(gulp.dest("docs/js/"));
+});
+
+gulp.task("images", function () {
+  return gulp.src("src/img/**/*.{png,jpg,svg}")
+    .pipe(imagemin())
+    .pipe(gulp.dest("docs/img"));
 });
 
 gulp.task("css", function () {
@@ -71,5 +78,5 @@ gulp.task("clean", function() {
   return del("build");
 });
 
-gulp.task("build", gulp.series("clean", "css", "html", "js"));
+gulp.task("build", gulp.series("clean", "css", "html", "js", "images"));
 gulp.task("start", gulp.series("build", "server"));
