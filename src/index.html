@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#ffd200">
   <title>Whimsy Software</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 </head>
 <script>
@@ -20,13 +20,13 @@
 </noscript>
 <div class="main">
   <header class="header">
-    <div class="container">
-      <picture>
+    <div class="container header__container">
+      <picture class="header__logo">
 <!--        <source srcset="img/logo.svg" media="(min-width: 590px)">-->
         <img src="img/logo-mobile.svg" width="48" height="28" alt="Whimsy Software">
       </picture>
       <nav class="nav">
-        <button class="nav__btn" type="button">
+        <button class="nav__btn" type="button" id="hamburger">
           <span class="visually-hidden">Toggle menu</span>
         </button>
         <ul class="nav__list">
@@ -53,6 +53,7 @@
       </a>
       <a class="main__link main__link--secondary" href="">our works</a>
     </div>
+    <span class="main__scroll">scroll</span>
   </section>
 </div>
 

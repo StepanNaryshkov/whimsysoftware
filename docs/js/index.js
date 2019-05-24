@@ -1,1 +1,1 @@
-console.log("init header");
+$("#hamburger").click(function(){$("body").toggleClass("menu-open")});

@@ -37,10 +37,12 @@ html {
   &--main {
     background-repeat: no-repeat;
     background-image: url("../img/face.png");
-    background-position: -100px 0;
+    background-position: -100px 135px;
+    padding-top: 95px;
 
-    @media (min-resolution: $retina-dpi), (-webkit-min-device-pixel-ratio: $retina-dppx) {
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
       background-image: url("../img/face2x.png");
+      background-size: contain;
     }
   }
 }
