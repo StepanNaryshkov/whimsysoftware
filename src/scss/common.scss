@@ -39,10 +39,43 @@ html {
     background-image: url("../img/face.png");
     background-position: -100px 135px;
     padding-top: 95px;
+    padding-bottom: 70px;
+    position: relative;
+  }
+}
 
-    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-      background-image: url("../img/face2x.png");
-      background-size: contain;
+@media (min-width: $responsive-mobile) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    &--main {
+      background-position: 25px 120px;
+      padding-top: 190px;
+    }
+  }
+}
+
+@media (min-width: $responsive-tablet) {
+  .container {
+    &--main {
+      padding-top: 215px;
+    }
+  }
+}
+
+@media (min-width: $responsive-desktop) {
+  .container {
+    max-width: 1280px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 35px;
+    padding-left: 35px;
+
+    &--main {
+      padding-top: 210px;
+      background-position: 55px 170px;
     }
   }
 }

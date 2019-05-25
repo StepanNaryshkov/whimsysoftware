@@ -1,1 +1,1 @@
-$("#hamburger").click(function(){$("body").toggleClass("menu-open")});
+$("#hamburger").click(function(){$("body").toggleClass("menu-open")}),$(window).scroll(function(){$(window).scrollTop()>=5?$("body").addClass("fixed"):$("body").removeClass("fixed")});
