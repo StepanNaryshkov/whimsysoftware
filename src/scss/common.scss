@@ -44,6 +44,37 @@ html {
   }
 }
 
+.title {
+  font-size: 16px;
+  font-weight: 900;
+  color: $color-secondary;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-top: 0;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    background-color: #a952a5;
+    top: 1px;
+    left: -10px;
+    height: 12px;
+    width: 4px;
+  }
+}
+
+.text {
+  font-size: 36px;
+  font-weight: 300;
+  color: rgb(21, 12, 28);
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
 @media (min-width: $responsive-mobile) {
   .container {
     padding-left: 15px;
