@@ -1,0 +1,14 @@
+.footer {
+  background-color: #0e0e0e;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  &__text {
+    font-size: 12px;
+    color: rgba(250, 251, 251, 0.502);
+    text-transform: uppercase;
+    line-height: 2;
+    font-weight: 500;
+  }
+}

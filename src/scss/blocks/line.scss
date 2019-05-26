@@ -102,6 +102,26 @@
   }
 }
 
+@media (min-width: $responsive-tablet) {
+  .line {
+    &--1 {
+      left: 80px;
+
+      &::after {
+        bottom: 560px;
+      }
+    }
+
+    &--2 {
+      right: 80px;
+
+      &::after {
+        bottom: 260px;
+      }
+    }
+  }
+}
+
 @media (min-width: $responsive-desktop) {
   .line {
     &--1 {
