@@ -84,6 +84,16 @@
         opacity: 0;
       }
 
+      &:active {
+        color: rgb(106, 48, 149);
+        background-color: #ffffff;
+
+
+        &::after {
+          opacity: 0;
+        }
+      }
+
       &:hover {
         background-color: #6e286a;
         color: #ffffff;

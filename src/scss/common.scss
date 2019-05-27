@@ -85,6 +85,11 @@ html {
       padding-top: 190px;
     }
   }
+
+  .text {
+    font-size: 48px;
+    line-height: 1;
+  }
 }
 
 @media (min-width: $responsive-tablet) {
@@ -92,6 +97,11 @@ html {
     &--main {
       padding-top: 215px;
     }
+  }
+
+  .text {
+    font-size: 72px;
+    margin-bottom: 65px;
   }
 }
 
@@ -101,12 +111,19 @@ html {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-right: 35px;
-    padding-left: 35px;
+    padding-right: 40px;
+    padding-left: 40px;
 
     &--main {
       padding-top: 210px;
       background-position: 55px 170px;
+      padding-right: 35px;
+      padding-left: 35px;
     }
+  }
+
+  .title {
+    margin-bottom: 25px;
+    margin-left: 10px;
   }
 }
