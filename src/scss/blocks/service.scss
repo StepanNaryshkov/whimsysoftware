@@ -21,18 +21,19 @@
     &::after {
       position: absolute;
       top: -70px;
-      left: -133px;
+      left: -120px;
       font-size: 100px;
       color: rgba(228, 226, 230, 0.502);
       line-height: 1.2;
       font-weight: 300;
+      z-index: -1;
     }
 
     &::before {
       content: '';
       position: absolute;
       top: -70px;
-      left: -125px;
+      left: -120px;
       background-color: #fff;
       height: 100px;
       width: 30px;
@@ -175,13 +176,13 @@
     }
 
     &__number {
-      margin-bottom: 28px;
+      margin-bottom: 27px;
       margin-left: 95px;
 
       &::before,
       &::after {
-        left: -125px;
-        top: -80px;
+        left: -118px;
+        top: -70px;
       }
     }
 
@@ -197,7 +198,7 @@
     text-align: left;
 
     &__text {
-      margin-bottom: 45px;
+      margin-bottom: 47px;
       max-width: 100%;
     }
   }
