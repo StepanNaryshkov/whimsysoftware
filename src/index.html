@@ -16,11 +16,18 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900&display=swap" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 </head>
+<style type="text/css">
+  .parallaxParent > * {
+    height: 200%;
+    position: relative;
+    top: -100%;
+  }
+</style>
 <script>
   document.createElement( "picture" );
 </script>
 <script src="https://cdn.rawgit.com/scottjehl/picturefill/3.0.2/dist/picturefill.min.js" async></script>
-<body>
+<body class="no-focus">
 <noscript>
     JavaScript is required for correct time!
 </noscript>
@@ -39,7 +46,7 @@
         </button>
         <ul class="nav__list">
           <li class="nav__item"><a class="nav__link" href="#service">Services</a></li>
-          <li class="nav__item"><a class="nav__link" href="">Why Whimsy Software?</a></li>
+          <li class="nav__item"><a class="nav__link" href="#about">Why Whimsy Software?</a></li>
           <li class="nav__item"><a class="nav__link" href="">Portfolio</a></li>
           <li class="nav__item"><a class="nav__link" href="">Testimonials</a></li>
           <li class="nav__item"><a class="nav__link" href="">Contact</a></li>
@@ -92,7 +99,7 @@
       </li>
       <li class="service__item">
         <span class="service__number service__number--4">04</span>
-        <p class="service__text service__text--big">Optimization projects and bug fixing</p>
+        <p class="service__text service__text--big">Projects optimization and bug fixing</p>
       </li>
       <li class="service__item">
         <span class="service__number service__number--5">05</span>
@@ -105,10 +112,56 @@
     </ul>
   </section>
 </div>
+<div class="about" id="about">
+  <section class="container about__container">
+    <h2 class="title">About</h2>
+    <p class="text">Why Whimsy Software</p>
+    <div  class="about__wrap">
+      <p class="about__text">We provide saving for you and care for your project. As a client you will get discussion, updates, calls and any other interactions with the resources of the dedicated development team to have the project completed.
+      </p>
+      <div class="about__parallax parallax">
+        <img
+            class="rellax parallax__img parallax__img--0"
+            data-rellax-percentage="0.5"
+            src="img/parallax/vr.png"
+            height="200"
+        >
+        <img
+            class="rellax parallax__img parallax__img--1"
+            data-rellax-percentage="0.5"
+            src="img/parallax/logo1.png"
+            height="35"
+        >
+        <img
+            class="rellax parallax__img parallax__img--2"
+            data-rellax-percentage="0.5"
+            data-rellax-speed="1"
+            src="img/parallax/logo2.png"
+            height="20"
+        >
+        <img
+            class="rellax parallax__img parallax__img--3"
+            data-rellax-speed="3"
+            data-rellax-percentage="0.5"
+            src="img/parallax/logo3.png"
+            height="20"
+        >
+        <img
+            class="rellax parallax__img parallax__img--4"
+            data-rellax-speed="-1"
+            data-rellax-percentage="0.5"
+            src="img/parallax/logo4.png"
+            height="150"
+        >
+      </div>
+    </div>
+  </section>
+</div>
 <footer class="footer">
   <span class="footer__text">© 2019 Whimsy Software</span>
 </footer>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="js/plugins/index.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

@@ -59,6 +59,10 @@
     letter-spacing: 1px;
     border-radius: 30px;
 
+    .no-focus &:focus {
+      outline: none;
+    }
+
     &-text {
       z-index: 1;
       position: relative;

@@ -31,7 +31,7 @@
     padding: 0;
     z-index: 10;
 
-    &:focus {
+    .no-focus &:focus {
       outline: none;
     }
 
@@ -87,6 +87,10 @@
 
     &:hover {
       color: rgb(169, 82, 165);
+    }
+
+    .no-focus &:focus {
+      outline: none;
     }
   }
 }

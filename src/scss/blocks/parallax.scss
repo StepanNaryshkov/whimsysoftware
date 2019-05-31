@@ -1,0 +1,110 @@
+.parallax {
+  position: relative;
+
+  &__img {
+    &--0 {
+      position: relative;
+      z-index: 1;
+    }
+    &--1 {
+      position: absolute;
+      top: -15px;
+      left: calc(50% - 45px);
+    }
+
+    &--2 {
+      position: absolute;
+      filter: blur(2px);
+      top: 103px;
+      right: calc(50% - 108px);
+    }
+
+    &--3 {
+      position: absolute;
+      right: calc(50% - 90px);
+      top: 7px;
+      filter: blur(2px);
+    }
+
+    &--4 {
+      position: absolute;
+      top: -12px;
+      left: calc(50% - 125px);
+    }
+  }
+}
+
+@media (min-width: $responsive-mobile) {
+  .parallax {
+    &__img {
+      &--0 {
+        height: 420px;
+      }
+      &--1 {
+        top: -25px;
+        left: calc(50% - 95px);
+        height: 70px;
+      }
+
+      &--2 {
+        top: 232px;
+        right: calc(50% - 210px);
+        height: 40px;
+        filter: blur(1px);
+      }
+
+      &--3 {
+        right: calc(50% - 185px);
+        top: 29px;
+        height: 40px;
+        filter: blur(1px);
+      }
+
+      &--4 {
+        left: calc(50% - 265px);
+        top: -21px;
+        height: 310px;
+      }
+    }
+  }
+}
+
+@media (min-width: $responsive-tablet) {
+  .parallax {
+    padding-bottom: 25px;
+  }
+}
+
+@media (min-width: $responsive-desktop) {
+  .parallax {
+    padding-bottom: 0;
+    top: -30px;
+
+    &__img {
+      &--1 {
+        top: -13px;
+        left: calc(50% - 55px);
+      }
+
+      &--2 {
+        right: calc(50% - 245px);
+      }
+
+      &--3 {
+        right: calc(50% - 225px);
+        top: 40px;
+      }
+
+      &--0 {
+        height: 430px;
+        margin-left: 23px;
+        left: 30px;
+      }
+
+      &--4 {
+        left: calc(50% - 230px);
+        top: -13px;
+      }
+    }
+  }
+}
