@@ -55,6 +55,10 @@ html {
   position: relative;
   display: inline-block;
 
+  &--white {
+    color: #ffffff;
+  }
+
   &::after {
     content: '';
     position: absolute;
@@ -73,6 +77,14 @@ html {
   line-height: 1.2;
   margin-top: 0;
   margin-bottom: 40px;
+
+  &--portfolio {
+    margin-bottom: 55px;
+  }
+
+  &--white {
+    color: #ffffff;
+  }
 }
 
 @media (min-width: $responsive-mobile) {
