@@ -60,6 +60,13 @@
     }
   }
 
+  &__img-wrap,
+  &__img {
+    .no-focus &:focus {
+      outline: none;
+    }
+  }
+
   &__icon {
     &--next {
       transform: rotate(-180deg);
@@ -90,6 +97,10 @@
       height: 100%;
       width: 230px;
       box-shadow: 0 24px 35px 0 rgba(219, 223, 229, 1);
+    }
+
+    .no-focus &:focus {
+      outline: none;
     }
   }
 
