@@ -313,6 +313,15 @@
 }
 
 @media (min-width: $responsive-desktop) {
+  .portfolio__item.slick-slide {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .portfolio__item.slick-active {
+    opacity: 1;
+  }
+
   .portfolio {
     text-align: left;
 
