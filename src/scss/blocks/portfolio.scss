@@ -32,25 +32,7 @@
   }
 
   &__arrow {
-    border: none;
-    width: 40px;
-    height: 40px;
     background-color: #ffffff;
-    position: absolute;
-    bottom: 0;
-    z-index: 1;
-    cursor: pointer;
-    transform: translate3d(0px, 0px, 0px);
-
-    &:hover {
-      .portfolio__path {
-        fill: $color-primary;
-      }
-    }
-
-    .no-focus &:focus {
-      outline: none;
-    }
 
     &--next {
       left: 40px;
@@ -65,12 +47,6 @@
   &__img {
     .no-focus &:focus {
       outline: none;
-    }
-  }
-
-  &__icon {
-    &--next {
-      transform: rotate(-180deg);
     }
   }
 

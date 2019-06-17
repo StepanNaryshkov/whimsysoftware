@@ -1,3 +1,95 @@
 .testimonials {
   background-color: #fff;
+  padding-bottom: 30px;
+
+  &__slider {
+    padding-bottom: 70px;
+  }
+
+  &__item {
+    width: 280px;
+    min-height: 290px;
+    background-image: url("../img/upwork-icon-bg.svg");
+    background-size: 280px;
+    background-position-y: 26px;
+    background-repeat: no-repeat;
+    padding: 100px 25px 50px 25px;
+    position: relative;
+    margin: 0;
+  }
+
+  &__item.slick-slide {
+    background-color: white;
+    transform: scale(.8) translateX(90%);
+    z-index: 1;
+  }
+
+  &__item.slick-current {
+    background-color: #150c1c;
+    transform: scale(1) translateX(0);
+    z-index: 2;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: calc(50% - 20px);
+      border-top: 10px solid #150c1c;
+      border-right: 30px solid transparent;
+    }
+  }
+
+  &__item.slick-current ~ .slick-slide {
+    transform: scale(.8) translateX(-90%);
+  }
+
+  &__name {
+    font-size: 24px;
+    color: rgb(250, 251, 251);
+    font-weight: bold;
+    line-height: 1;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: 0;
+      height: 34px;
+      width: 34px;
+      background-color: #6eda44;
+      border-radius: 50%;
+      background-image: url("../img/upwork-icon.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__comment {
+    font-size: 14px;
+    color: rgba(250, 251, 251, 0.8);
+    line-height: 1.714;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__arrow {
+    background-color: transparent;
+
+    &--next {
+      right: 0;
+    }
+  }
+
+  &__nav {
+    font-size: 14px;
+    color: rgb(21, 12, 28);
+    line-height: 1.714;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -30px);
+  }
 }
