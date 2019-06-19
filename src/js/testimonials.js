@@ -6,7 +6,7 @@ $('.testimonials__slider').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   infinite: false,
-  speed: 300,
+  speed: 1000,
   initialSlide: 1,
   adaptiveHeight: true,
   centerPadding: '0',
@@ -24,8 +24,18 @@ $('.testimonials__slider').slick({
 });
 
 $('#testimonials__count').text($('.testimonials__item').length);
+$('#range').attr('max',$('.testimonials__item').length);
 
 $('.testimonials__slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
   $('#testimonials__current').text(nextSlide + 1);
   $('#testimonials__count').text(slick.slideCount);
+});
+
+$('.testimonials__slider').on('afterChange',function(e,slick,currentSlide){
+  $('#range').val(currentSlide+1);
+})
+
+$('#range').on('input change',function(){
+  console.log('this.value', this.value)
+  $('.testimonials__slider').slick('slickGoTo', this.value-1);
 });

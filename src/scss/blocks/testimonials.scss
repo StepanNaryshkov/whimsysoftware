@@ -1,5 +1,5 @@
 .testimonials {
-  background-color: #fff;
+  background-color: #fafbfb;
   padding-bottom: 30px;
 
   &__slider {
@@ -8,18 +8,30 @@
 
   &__item {
     width: 280px;
+    background-color: #ffffff;
     min-height: 290px;
-    background-image: url("../img/upwork-icon-bg.svg");
+    background-image: url("../img/upwork-icon-bg-light.svg");
     background-size: 280px;
     background-position-y: 26px;
+    background-position-x: -10px;
     background-repeat: no-repeat;
     padding: 100px 25px 50px 25px;
     position: relative;
     margin: 0;
+    transition: all 1s;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: calc(50% - 20px);
+      border-top: 10px solid #fff;
+      transition: all 1s;
+      border-right: 30px solid transparent;
+    }
   }
 
   &__item.slick-slide {
-    background-color: white;
     transform: scale(.8) translateX(90%);
     z-index: 1;
   }
@@ -30,22 +42,17 @@
     z-index: 2;
 
     &::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: calc(50% - 20px);
-      border-top: 10px solid #150c1c;
-      border-right: 30px solid transparent;
+      border-top-color: #150c1c;
     }
   }
 
   &__item.slick-current ~ .slick-slide {
-    transform: scale(.8) translateX(-90%);
+    transform: translate3d(20%, 0, 0px) scale(0.8);
   }
 
   &__name {
     font-size: 24px;
-    color: rgb(250, 251, 251);
+    color: rgba(21, 12, 28, 0.6);
     font-weight: bold;
     line-height: 1;
     position: relative;
@@ -70,7 +77,7 @@
 
   &__comment {
     font-size: 14px;
-    color: rgba(250, 251, 251, 0.8);
+    color: rgba(21, 12, 28, 0.4);
     line-height: 1.714;
     margin-top: 0;
     margin-bottom: 0;
@@ -78,6 +85,10 @@
 
   &__arrow {
     background-color: transparent;
+
+    &--prev {
+      left: 0;
+    }
 
     &--next {
       right: 0;
@@ -91,5 +102,190 @@
     position: absolute;
     left: 50%;
     transform: translate(-50%, -30px);
+  }
+
+
+  .slick-track {
+    max-width: 100%!important;
+    transform: translate3d(0, 0, 0)!important;
+  }
+
+  .slick-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%!important;
+    transition: all 1s;
+    transform: translate3d(-20%, 0, 0px) scale(0.8);
+  }
+
+  .slick-current {
+    position: relative;
+    background-image: url("../img/upwork-icon-bg.svg");
+    animation-duration: 1s;
+    animation-name: slidein;
+    animation-fill-mode: both;
+    display: block;
+    transform: scale(1);
+
+    .testimonials {
+      &__name {
+        color: rgb(250, 251, 251);
+      }
+
+      &__comment {
+        color: rgba(250, 251, 251, 0.8);
+      }
+    }
+  }
+
+  &__range {
+    -webkit-appearance: none;
+    width: 100%;
+    margin: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__range::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: #e2e3e3;
+  }
+
+  &__range::-webkit-slider-thumb {
+    height: 5px;
+    width: 25%;
+    background: #4d2252;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -2px;
+  }
+  &__range:focus::-webkit-slider-runnable-track {
+    background: #eff0f0;
+  }
+  &__range::-moz-range-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: #e2e3e3;
+  }
+  &__range::-moz-range-thumb {
+    height: 5px;
+    width: 25%;
+    background: #4d2252;
+    cursor: pointer;
+  }
+  &__range::-ms-track {
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  &__range::-ms-fill-lower {
+    background: #d5d6d6;
+  }
+  &__range::-ms-fill-upper {
+    background: #e2e3e3;
+  }
+  &__range::-ms-thumb {
+    width: 100px;
+    background: #4d2252;
+    cursor: pointer;
+    height: 2px;
+  }
+  &__range:focus::-ms-fill-lower {
+    background: #e2e3e3;
+  }
+  &__range:focus::-ms-fill-upper {
+    background: #eff0f0;
+  }
+}
+
+@media (min-width: $responsive-mobile) {
+  .testimonials {
+    text-align: center;
+    padding-top: 130px;
+
+    &__item {
+      text-align: left;
+
+      &.slick-current~.slick-slide {
+        &:nth-last-child(1) {
+          z-index: 2;
+        }
+
+        &:nth-last-child(2) {
+          z-index: 3;
+        }
+
+        &:nth-last-child(3) {
+          z-index: 4;
+        }
+      }
+    }
+
+    .slick-list {
+      padding: 0 50px !important;
+    }
+  }
+}
+
+@media (min-width: $responsive-tablet) {
+  .testimonials {
+    overflow-x: hidden;
+
+    &__item {
+      box-shadow: -5px 50px 40px 0px rgba(219, 223, 229, 1);
+
+      &.slick-current {
+        box-shadow: none;
+        transform: scale(1);
+      }
+    }
+
+    .slick-list {
+      overflow: visible!important;
+    }
+  }
+}
+
+@media (min-width: $responsive-desktop) {
+  .testimonials {
+    &__item {
+      &.slick-slide {
+        &:not(.slick-current) {
+          transform: translate3d(-155px,0,0) scale(.8);
+        }
+        &:first-child:not(.slick-current) {
+          transform: translate3d(-215px,0,0) scale(.8);
+        }
+      }
+
+      &.slick-current {
+        transform: scale(1);
+      }
+
+      &.slick-current~.slick-slide {
+        transform: translate3d(20%,0,0) scale(.8);
+        &:last-child {
+          transform: translate3d(25%,0,0) scale(.8);
+        }
+      }
+    }
+  }
+}
+
+@keyframes slidein {
+  100% {
+    z-index: 20;
   }
 }
