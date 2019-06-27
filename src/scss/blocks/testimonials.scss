@@ -166,12 +166,19 @@
   &__range {
     -webkit-appearance: none;
     width: $width-of-range;
-    //display: none;
     margin: 0 auto;
-    height: 5px;
+    padding: 0;
+    position: relative;
+    top: -4px;
 
     &:focus {
       outline: none;
+    }
+
+    &-wrap {
+      height: 10px;
+      display: none;
+      align-items: center;
     }
   }
 
@@ -186,15 +193,15 @@
   height: 2px;
   cursor: pointer;
   transition: all 0.2s;
-  box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
   background: #e2e3e3;
   border-radius: 0;
-  border: 0 solid #000101;
+  box-shadow: none;
+  border: none;
 }
 
 .testimonials__range::-webkit-slider-thumb {
-  box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
-  border: 0 solid #000000;
+  box-shadow: none;
+  border: none;
   height: 5px;
   width: $width-of-range / $count-of-sliders;
   border-radius: 0;
@@ -212,14 +219,14 @@
   height: 2px;
   cursor: pointer;
   transition: all 0.2s;
-  box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
+  box-shadow: none;
   background: #e2e3e3;
   border-radius: 0;
-  border: 0 solid #000101;
+  border: none;
 }
 .testimonials__range::-moz-range-thumb {
-  box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
-  border: 0 solid #000000;
+  box-shadow: none;
+  border: none;
   height: 5px;
   width: $width-of-range / $count-of-sliders;
   border-radius: 0;
@@ -231,31 +238,33 @@
   height: 2px;
   cursor: pointer;
   transition: all 0.2s;
-  background: transparent;
-  border-color: transparent;
-  border-width: 1px 0;
+  background: none;
+  border: none;
   color: transparent;
+  box-shadow: none;
+  margin: 0;
 }
 .testimonials__range::-ms-fill-lower {
   background: #e2e3e3;
-  border: 0 solid #000101;
+  border: none;
   border-radius: 0;
-  box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
+  box-shadow: none;
 }
 .testimonials__range::-ms-fill-upper {
   background: #e2e3e3;
   border: 0 solid #000101;
   border-radius: 0;
-  box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
+  box-shadow: none;
 }
 .testimonials__range::-ms-thumb {
-  box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
+  box-shadow: none;
   border: 0 solid #000000;
   height: 5px;
   width: $width-of-range / $count-of-sliders;
   border-radius: 0;
   background: #4d226d;
   cursor: pointer;
+  padding: 0;
 }
 .testimonials__range:focus::-ms-fill-lower {
   background: #e2e3e3;
@@ -318,8 +327,8 @@
       }
     }
 
-    &__range {
-      display: block;
+    &__range-wrap {
+      display: flex;
     }
 
     &__arrow {
