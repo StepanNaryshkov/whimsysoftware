@@ -1,7 +1,7 @@
 .testimonials {
   background-color: #fafbfb;
   padding-top: 130px;
-  padding-bottom: 30px;
+  padding-bottom: 140px;
   text-align: center;
 
   &__container {
@@ -58,7 +58,7 @@
   }
 
   &__item.slick-current ~ .slick-slide {
-    transform: translate3d(50px,25px,0) scale(0.8);
+    transform: translate3d(35px,25px,0) scale(0.8);
   }
 
   &__name {
@@ -140,7 +140,7 @@
     margin: auto;
     width: 100%!important;
     transition: all 1s;
-    transform: translate3d(-50px, 25px, 0) scale(0.8);
+    transform: translate3d(-35px, 25px, 0) scale(0.8);
   }
 
   .slick-current {
@@ -275,7 +275,7 @@
 
 @media (min-width: $responsive-mobile) {
   .testimonials {
-    padding-bottom: 130px;
+    padding-bottom: 190px;
 
     &__comment {
       margin-top: 20px;
@@ -359,6 +359,8 @@
 
 @media (min-width: $responsive-tablet) {
   .testimonials {
+    padding-bottom: 170px;
+
     .slick-list {
       margin-bottom: 0;
     }
@@ -394,7 +396,7 @@
   .testimonials {
     text-align: left;
     padding-top: 115px;
-    padding-bottom: 100px;
+    padding-bottom: 140px;
 
     .slick-list {
       padding: 0 195px!important;

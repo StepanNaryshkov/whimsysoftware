@@ -13,7 +13,7 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#191919">
   <title>Whimsy Software</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   <link href="css/style.css" rel="stylesheet">
 </head>
@@ -43,7 +43,7 @@
           <li class="nav__item"><a class="nav__link" href="#about">Why Whimsy Software?</a></li>
           <li class="nav__item"><a class="nav__link" href="#portfolio">Portfolio</a></li>
           <li class="nav__item"><a class="nav__link" href="#testimonials">Testimonials</a></li>
-          <li class="nav__item"><a class="nav__link" href="">Contact</a></li>
+          <li class="nav__item"><a class="nav__link" href="#contacts">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -111,8 +111,12 @@
     <h2 class="title">About us</h2>
     <p class="text">Why Whimsy Software</p>
     <div  class="about__wrap">
-      <p class="about__text">We provide saving for you and care for your project. As a client you will get discussion, updates, calls and any other interactions with the resources of the dedicated development team to have the project completed.
-      </p>
+      <ul class="about__text">
+        <li>- Top rated Upwork agency with more than 2000 hours tracked</li>
+        <li>- Domain expertise only in Unity 3D</li>
+        <li>- Retention rate: 97%</li>
+        <li>- Your quality is our priority</li>
+      </ul>
       <div class="about__parallax parallax">
         <img
             class="rellax parallax__img parallax__img--0"
@@ -346,6 +350,45 @@
       <input type="range" id="range" min="1" max="4" value="2" step="1" class="testimonials__range" />
     </div>
   </section>
+</div>
+<div class="contacts" id="contacts">
+  <div class="container">
+    <p class="text contacts__text">Contact us</p>
+    <div class="contacts__wrap visually-hidden">
+      <div>
+        <a class="contacts__link" href="tel:+84956483749">8 (495) 648 37 49</a>
+        <a class="contacts__link" href="mailto:info@whimsy.software">info@whimsy.software</a>
+        <div>
+          <span>Whimsy Software on</span>
+          <a href="#">www.upwork.com</a>
+        </div>
+      </div>
+      <section>
+        <h3>Having questions?</h3>
+        <p>We are here to answer.</p>
+        <p><span>Have a great idea? </span>We are here to deliver software solution.</p>
+        <form>
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name">
+          </div>
+          <div>
+            <label for="work">Work mail</label>
+            <input type="text" id="work">
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="number" id="phone">
+          </div>
+          <div>
+            <label for="comments">Your message</label>
+            <textarea id="comments"></textarea>
+          </div>
+          <button>contact us</button>
+        </form>
+      </section>
+    </div>
+  </div>
 </div>
 <footer class="footer">
   <span class="footer__text">© 2019 Whimsy Software</span>
