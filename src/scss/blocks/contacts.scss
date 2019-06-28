@@ -167,7 +167,7 @@
     transition: all 0.2s;
     cursor: pointer;
 
-    &:hover {
+    .can-hover &:hover {
       background-color: #360d55;
       color: white;
     }
