@@ -98,15 +98,13 @@
         }
       }
 
-      &:hover {
+      .can-hover &:hover {
         background-color: #6e286a;
         color: #ffffff;
 
 
         &::after {
-          @supports (:hover) {
-            opacity: 1;
-          }
+          opacity: 1;
         }
       }
     }
@@ -120,7 +118,7 @@
       background-color: #150c1c;
       box-shadow: 13px 10px 50px 0 rgb(0, 0, 0);
 
-      &:hover {
+      .can-hover &:hover {
         background-color: #360d55;
       }
     }
