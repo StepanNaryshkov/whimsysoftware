@@ -7,11 +7,137 @@
 
   &__link {
     font-weight: 800;
-    font-size: 30px;
+    font-size: 20px;
+    line-height: 1.2;
     color: rgb(21, 12, 28);
-    line-height: 0.8;
     text-decoration: none;
     display: block;
+
+    &--mobile {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__desc {
+    margin-top: 40px;
+  }
+
+  &__why {
+    font-size: 15px;
+    color: rgb(21, 12, 28);
+    line-height: 1.6;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  &__upwork {
+    font-size: 15px;
+    color: rgba(250, 251, 251, 0.8);
+    font-weight: 800;
+    line-height: 1.6;
+    background-color: #5dc435;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 25px;
+  }
+
+  &__subtext {
+    font-size: 15px;
+    color: rgba(21, 12, 28, 0.8);
+    line-height: 1.6;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  &__field {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #150c1c;
+    border-image: linear-gradient(#150c1c, #150c1c) 2;
+    border-image: linear-gradient(90deg, #150c1c, #150c1c) 90;
+    border-image-width: 0 0 2px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(21, 12, 28);
+    line-height: 1.9;
+    font-family: Montserrat, sans-serif;
+
+
+    &:focus {
+      border-bottom: 2px solid #4D226D;
+      border-image: linear-gradient(90deg, rgb(199, 55, 96), rgb(77, 34, 109)) 90;
+    }
+
+    .no-focus &:focus {
+      outline: none;
+    }
+  }
+
+  &__links {
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 65px;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 50px;
+    position: relative;
+  }
+
+  &__error {
+    font-size: 14px;
+    color: rgb(251, 70, 70);
+    line-height: 1.714;
+    font-weight: 500;
+  }
+
+  &__btn {
+    font-size: 16px;
+    color: rgb(77, 34, 109);
+    border: 2px solid rgb(77, 34, 109);
+    padding: 10px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.2;
+    background-color: transparent;
+  }
+
+  &__label {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(21, 12, 28);
+    line-height: 1.714;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  &__strong {
+    font-weight: 700;
+    color: #684185;
+  }
+
+  &__form {
+    margin-top: 35px;
+  }
+
+  &__subtitle {
+    font-size: 30px;
+    color: rgb(199, 55, 96);
+    line-height: 1.2;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 15px;
+
+    @supports (-webkit-background-clip: text) {
+      background: linear-gradient(90deg, rgb(199, 55, 96), rgb(77, 34, 109));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      white-space: nowrap;
+    }
   }
 }
 
@@ -19,6 +145,11 @@
   .contacts {
     &__text {
       text-align: left;
+    }
+
+    &__link {
+      font-size: 30px;
+      line-height: 0.8;
     }
   }
 }
