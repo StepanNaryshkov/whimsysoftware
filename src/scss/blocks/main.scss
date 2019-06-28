@@ -104,7 +104,9 @@
 
 
         &::after {
-          opacity: 1;
+          @supports (:hover) {
+            opacity: 1;
+          }
         }
       }
     }
