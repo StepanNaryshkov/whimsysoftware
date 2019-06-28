@@ -82,6 +82,7 @@
     font-family: Montserrat, sans-serif;
     width: 100%;
     border-radius: 0;
+    transition: all 0.2s;
 
 
     &:focus {
@@ -90,6 +91,12 @@
         transition: 0.4s;
         left: 0;
       }
+
+      border-bottom-color: transparent;
+    }
+
+    .error & {
+      border-bottom-color: transparent;
     }
 
     .no-focus &:focus {
