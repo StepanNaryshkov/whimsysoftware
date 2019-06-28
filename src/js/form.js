@@ -4,7 +4,7 @@ $( "#form" ).submit(function( event ) {
   function checkValidField(id) {
     var element = $(id);
     if (element.val() < 1) {
-      element.parent().addClass("success");
+      element.parent().addClass("error");
       return false;
     } else {
       return element.val();
@@ -21,7 +21,7 @@ $( "#form" ).submit(function( event ) {
     && email
     && comments
   ) {
-    $("body").addClass('error')
+    $("body").addClass('success')
   } else {
     console.log('error')
   }
