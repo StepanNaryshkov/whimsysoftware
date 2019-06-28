@@ -367,7 +367,7 @@
   </section>
 </div>
 <div class="contacts" id="contacts">
-  <div class="container">
+  <div class="container contacts__container">
     <p class="text contacts__text">Contact us</p>
     <div class="contacts__wrap">
       <div class="contacts__links">
@@ -375,36 +375,40 @@
         <a class="contacts__link" href="mailto:info@whimsy.software">info@whimsy.software</a>
         <div class="contacts__desc">
           <span class="contacts__why">Whimsy Software on</span>
-          <a class="contacts__upwork" href="#">www.upwork.com</a>
+          <a class="contacts__upwork" target="_blank" href="https://www.upwork.com/o/companies/~01b6638034c0a4445c/">www.upwork.com</a>
         </div>
       </div>
-      <section>
+      <section class="contacts__main">
         <h3 class="contacts__subtitle">
           Having questions?</h3>
         <p class="contacts__subtext">We are here to answer.</p>
         <p class="contacts__subtext"><b class="contacts__strong">Have a great idea? </b>We are here to deliver software solution.</p>
-        <form class="contacts__form">
-          <div class="contacts__row">
+        <form class="contacts__form" id="form">
+          <div class="contacts__row contacts__row--name">
             <input class="contacts__field" type="text" id="name">
             <label class="contacts__label" for="name">Name</label>
+            <span class="contacts__focus-border"></span>
             <span class="contacts__error">* You should fill in the field</span>
           </div>
-          <div class="contacts__row">
+          <div class="contacts__row contacts__row--half">
+            <input class="contacts__field" type="email" id="email">
+            <label class="contacts__label" for="email">Work mail</label>
+            <span class="contacts__focus-border"></span>
             <span class="contacts__error">* You should fill in the field</span>
-            <input class="contacts__field" type="text" id="work">
-            <label class="contacts__label" for="work">Work mail</label>
           </div>
-          <div class="contacts__row">
-            <span class="contacts__error">* You should fill in the field</span>
+          <div class="contacts__row contacts__row--half">
             <input class="contacts__field" type="number" id="phone">
             <label class="contacts__label" for="phone">Phone</label>
-          </div>
-          <div class="contacts__row">
+            <span class="contacts__focus-border"></span>
             <span class="contacts__error">* You should fill in the field</span>
-            <textarea class="contacts__field" id="comments"></textarea>
-            <label class="contacts__label" for="comments">Your message</label>
           </div>
-          <button class="contacts__btn">contact us</button>
+          <div class="contacts__row contacts__row--textarea">
+            <textarea class="contacts__field contacts__field--textarea" id="comments"></textarea>
+            <label class="contacts__label" for="comments">Your message</label>
+            <span class="contacts__focus-border"></span>
+            <span class="contacts__error">* You should fill in the field</span>
+          </div>
+          <button class="contacts__btn" type="submit">contact us</button>
         </form>
       </section>
     </div>
@@ -413,6 +417,21 @@
 <footer class="footer">
   <span class="footer__text">© 2019 Whimsy Software</span>
 </footer>
+<div class="popup">
+  <div class="popup__wrap popup__wrap--success">
+    <h3 class="popup__title popup__title--success">Thanks for
+      reaching us out!</h3>
+    <p class="popup__text">We will contact you
+      as soon as possible.</p>
+    <button class="popup__btn" type="button" id="success">OK</button>
+  </div>
+  <div class="popup__wrap popup__wrap--error">
+    <h3 class="popup__title popup__title--error">Your request
+      has failed.</h3>
+    <p class="popup__text popup__text--error">Please try one more time.</p>
+    <button class="popup__btn" type="button" id="error">OK</button>
+  </div>
+</div>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="js/plugins/index.js"></script>

@@ -1,5 +1,6 @@
 .contacts {
   background-color: #fafbfb;
+  padding-bottom: 150px;
 
   &__text {
     text-align: center;
@@ -26,7 +27,7 @@
     font-size: 15px;
     color: rgb(21, 12, 28);
     line-height: 1.6;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     display: block;
   }
 
@@ -50,27 +51,54 @@
     margin-top: 0;
   }
 
+  &__focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: rgb(199, 55, 96);
+    background-image: linear-gradient(90deg, rgb(199, 55, 96), rgb(77, 34, 109));
+    transition: left 0.4s, width 0.4s;
+
+    .error & {
+      width: 100%;
+      transition: 0.4s;
+      left: 0;
+      bottom: 0;
+      background-color: #fb4646;
+      background-image: linear-gradient(90deg, #fb4646, #fb4646);
+    }
+  }
+
   &__field {
     background-color: transparent;
     border: none;
     border-bottom: 2px solid #150c1c;
-    border-image: linear-gradient(#150c1c, #150c1c) 2;
-    border-image: linear-gradient(90deg, #150c1c, #150c1c) 90;
-    border-image-width: 0 0 2px 0;
     font-size: 16px;
     font-weight: 500;
     color: rgb(21, 12, 28);
     line-height: 1.9;
     font-family: Montserrat, sans-serif;
+    width: 100%;
 
 
     &:focus {
-      border-bottom: 2px solid #4D226D;
-      border-image: linear-gradient(90deg, rgb(199, 55, 96), rgb(77, 34, 109)) 90;
+      ~ .contacts__focus-border {
+        width: 100%;
+        transition: 0.4s;
+        left: 0;
+      }
     }
 
     .no-focus &:focus {
       outline: none;
+    }
+
+    &--textarea {
+      overflow: hidden;
+      resize: vertical;
+      min-height: 50px;
     }
   }
 
@@ -85,6 +113,19 @@
     flex-direction: column-reverse;
     margin-bottom: 50px;
     position: relative;
+    width: 100%;
+
+    &--textarea {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__row.error {
+    margin-bottom: 35px;
+  }
+
+  &__row--textarea.error {
+    margin-bottom: 75px;
   }
 
   &__error {
@@ -93,18 +134,39 @@
     line-height: 1.714;
     font-weight: 500;
     order: -1;
+    letter-spacing: -1px;
+    display: none;
+    height: 25px;
+    position: absolute;
+    left: 3px;
+    bottom: -35px;
+  }
+
+  .error .contacts__error {
+    display: block;
   }
 
   &__btn {
     font-size: 16px;
     color: rgb(77, 34, 109);
     border: 2px solid rgb(77, 34, 109);
-    padding: 10px;
+    padding: 13px 30px;
     border-radius: 25px;
     font-weight: 600;
     text-transform: uppercase;
     line-height: 1.2;
     background-color: transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #360d55;
+      color: white;
+    }
+
+    .no-focus &:focus {
+      outline: none;
+    }
   }
 
   &__label {
@@ -123,6 +185,10 @@
 
   &__form {
     margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
   &__subtitle {
@@ -142,13 +208,110 @@
   }
 }
 
+@media (min-width: $responsive-mobile) {
+  .contacts {
+    padding-bottom: 200px;
+
+    &__container {
+      padding-left: 70px;
+      padding-right: 70px;
+    }
+
+    &__link {
+      font-size: 30px;
+      line-height: 1;
+
+      &--mobile {
+        margin-bottom: 25px;
+      }
+    }
+
+    &__row {
+      &--half {
+        width: 47%;
+      }
+    }
+  }
+}
+
+@media (min-width: $responsive-tablet) {
+  .contacts {
+    &__container {
+      padding-right: 100px;
+      padding-left: 100px;
+    }
+
+    &__links {
+      padding-top: 0;
+      margin-bottom: 95px;
+    }
+
+    &__link {
+      &--mobile {
+        margin-bottom: 20px;
+      }
+    }
+
+    &__form {
+      margin-top: 60px;
+    }
+
+    &__row {
+      margin-bottom: 15px;
+
+      &--textarea {
+        margin-bottom: 45px;
+      }
+
+      &--name,
+      &--half {
+        width: 28%;
+      }
+    }
+  }
+}
+
 @media (min-width: $responsive-desktop) {
   .contacts {
+    &__container {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    &__wrap {
+      display: flex;
+      align-items: flex-start;
+    }
+
     &__text {
       text-align: left;
     }
 
+    &__desc {
+      text-align: left;
+      margin-top: 65px;
+    }
+
+    &__links {
+      margin-bottom: 0;
+    }
+
+    &__why {
+      text-align: left;
+      margin-left: 70px;
+    }
+
+    &__upwork {
+      margin-left: 70px;
+    }
+
+    &__main {
+      padding-left: 170px;
+      width: 100%;
+    }
+
     &__link {
+      text-align: left;
       font-size: 30px;
       line-height: 0.8;
     }

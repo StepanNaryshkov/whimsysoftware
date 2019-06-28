@@ -37,3 +37,5 @@ $('#range').on('input change',function(){
   console.log('this.value', this.value)
   $('.testimonials__slider').slick('slickGoTo', this.value-1);
 });
+
+// $count-of-sliders in scss you should change

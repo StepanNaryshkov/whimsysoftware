@@ -16,3 +16,9 @@ handleFixedMenu();
 $(window).scroll(function(){
     handleFixedMenu()
 });
+
+$( ".nav__list" ).click(function(e) {
+    if (e.target.className === 'nav__list') {
+        $('body').removeClass('menu-open')
+    }
+});
