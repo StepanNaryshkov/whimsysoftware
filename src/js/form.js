@@ -1,3 +1,8 @@
+function validateEmail(email) {
+  var re = /\S+@\S+\.\S+/;
+  return re.test(String(email).toLowerCase());
+}
+
 $( "#form" ).submit(function( event ) {
   event.preventDefault();
 
@@ -29,14 +34,24 @@ $( "#form" ).submit(function( event ) {
 
 $(".contacts__field").on('propertychange input', function (e) {
   var valueChanged = false;
+  // var email = checkValidField("#email");
 
   if (e.type=='propertychange') {
     valueChanged = e.originalEvent.propertyName == 'value';
   } else {
     valueChanged = true;
   }
+
   if (valueChanged) {
     $(e.target).parent().removeClass('error')
+  }
+
+  if (e.target.name === 'email' && e.target.value.length > 0 && !validateEmail(e.target.value)) {
+    $(e.target).parent().addClass('invalid')
+  }
+
+  if (e.target.name === 'email' && validateEmail(e.target.value)) {
+    $(e.target).parent().removeClass('invalid')
   }
 });
 

@@ -136,6 +136,7 @@
     margin-bottom: 75px;
   }
 
+  &__invalid,
   &__error {
     font-size: 14px;
     color: rgb(251, 70, 70);
@@ -150,8 +151,16 @@
     bottom: -35px;
   }
 
+  .invalid .contacts__invalid {
+    display: block;
+  }
+
   .error .contacts__error {
     display: block;
+
+    ~ .contacts__invalid {
+      display: none;
+    }
   }
 
   &__btn {
