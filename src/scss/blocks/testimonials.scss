@@ -81,7 +81,7 @@
   }
 
   &__item.slick-current ~ .slick-slide {
-    transform: translate3d(35px,25px,0) scale(0.8);
+    transform: translate3d(35px,0,0) scale(0.8);
   }
 
   &__name {
@@ -163,7 +163,7 @@
     margin: auto;
     width: 100%!important;
     transition: all 1s;
-    transform: translate3d(-35px, 25px, 0) scale(0.8);
+    transform: translate3d(-35px, 0, 0) scale(0.8);
   }
 
   .slick-current {
