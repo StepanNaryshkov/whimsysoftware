@@ -12,6 +12,15 @@ $( "#form" ).submit(function( event ) {
       element.parent().addClass("error");
       return false;
     } else {
+      if (element.attr('name') === 'email') {
+        if (!validateEmail(element.val())) {
+          $(element).parent().addClass('invalid');
+          return  false
+        } else {
+          $(element).parent().removeClass('invalid')
+        }
+
+      }
       return element.val();
     }
   }
@@ -44,13 +53,6 @@ $(".contacts__field").on('propertychange input', function (e) {
 
   if (valueChanged) {
     $(e.target).parent().removeClass('error')
-  }
-
-  if (e.target.name === 'email' && e.target.value.length > 0 && !validateEmail(e.target.value)) {
-    $(e.target).parent().addClass('invalid')
-  }
-
-  if (e.target.name === 'email' && validateEmail(e.target.value)) {
     $(e.target).parent().removeClass('invalid')
   }
 });
