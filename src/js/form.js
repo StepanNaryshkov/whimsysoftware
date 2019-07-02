@@ -37,13 +37,12 @@ $( "#form" ).submit(function( event ) {
   ) {
     $("body").addClass('success')
   } else {
-    console.log('error')
+    $("body").addClass('error')
   }
 });
 
 $(".contacts__field").on('propertychange input', function (e) {
   var valueChanged = false;
-  // var email = checkValidField("#email");
 
   if (e.type=='propertychange') {
     valueChanged = e.originalEvent.propertyName == 'value';
